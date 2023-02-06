@@ -4,7 +4,6 @@
   "description": "",
   "entry point": "app.js",
   "main": "app.js",
-  "type": "module",
   "scripts": {
     "test": "test",
     "start": "nodemon app.js"
