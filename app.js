@@ -20,6 +20,9 @@ app.use(cors({
   origin: `http://localhost:3000`
 }))
 
+// parse JSON requests, put them on req.body
+app.use(express.json())
+
 
 app.use(testRoutes)
 app.use(workoutRoutes)

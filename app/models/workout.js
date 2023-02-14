@@ -1,11 +1,5 @@
 const mongoose = require('mongoose')
 
-const workoutSchema = new mongoose.Schema({
-  exercises: [exerciseSchema]
-}, {
-  timestamps: true
-})
-
 const exerciseSchema = new mongoose.Schema({
   name: {
     type: String,
@@ -20,6 +14,17 @@ const exerciseSchema = new mongoose.Schema({
   weight: {
     type: Number
   }
+})
+
+const workoutSchema = new mongoose.Schema({
+  exercises: [exerciseSchema],
+  date: {
+    type: Date,
+    required: true
+  }
+  // I will need to add an owner to this, once I get user stuff set up
+}, {
+  timestamps: true
 })
 
 module.exports = mongoose.model('Workout', workoutSchema)
