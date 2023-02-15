@@ -13,11 +13,15 @@ router.get('/workouts', (req, res, next) => {
   .catch(next)
 })
 
+router.get('/workouts/:id', (req, res, next) => {
+  Workout.findById(req.params.id)
+  .then((workout) => res.status(200).json({ workout: workout.toObject() }))
+  .catch(next)
+})
+
 router.post('/workouts', (req, res, next) => {
   // Uncomment this when I have users set up
   // req.body.workout.owner = req.user.id
-
-  console.log(req.body.workout.date)
   Workout.create(req.body.workout)
   .then((workout) => res.status(201).json({ workout: workout.toObject() }))
   .catch(next)
