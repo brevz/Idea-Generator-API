@@ -3,9 +3,9 @@ const cors = require('cors')
 const mongoose = require('mongoose')
 require('dotenv').config()
 
-const Query = require('./app/models/query.js')
+const Query = require('../app/models/query.js')
 
-const currentDb = require('./dbConfig.js')
+const currentDb = require('../dbConfig.js')
 
 mongoose.connect(currentDb, {
   useNewUrlParser: true,
