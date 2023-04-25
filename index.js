@@ -32,7 +32,7 @@ app.post('/query', (req, res, next) => {
 
 // GET
 // Retrieve queries
-app.get('/query', (req, res, next) => {
+app.get('/', (req, res, next) => {
   Query.find({})
   .then((queries) => {
     return queries.map((query) => query.toObject())
