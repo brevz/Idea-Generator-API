@@ -27,7 +27,7 @@ app.use(express.json())
 app.post('/query', (req, res, next) => {
   Query.create(req.body.query)
   .then((query) => res.status(201).json({ query: query.toObject() }))
-  .catch(next)
+  .catch((error) => console.log(error))
 })
 
 // GET
@@ -38,7 +38,7 @@ app.get('/', (req, res, next) => {
     return queries.map((query) => query.toObject())
   })
   .then((queries) => res.status(200).json({ queries: queries }))
-  .catch(next)
+  .catch((error) => console.log(error))
 })
 
 app.listen(port, () => {
