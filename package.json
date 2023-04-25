@@ -2,11 +2,11 @@
   "name": "idea-generator-api",
   "version": "1.0.0",
   "description": "",
-  "entry point": "api/index.js",
-  "main": "api/index.js",
+  "entry point": "index.js",
+  "main": "index.js",
   "scripts": {
     "test": "test",
-    "start": "nodemon api/index.js"
+    "start": "nodemon index.js"
   },
   "author": "Joey",
   "license": "ISC",
